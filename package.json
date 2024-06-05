@@ -1,0 +1,25 @@
+{
+  "private": "true",
+  "name": "graphql-fullstack",
+  "version": "0.1.0",
+  "description": "Proyecto de GraphQL Fullstack con Node.js",
+  "workspaces": [
+    "api",
+    "client",
+    "packages/*"
+  ],
+  "scripts": {},
+  "author": "@oigomezz",
+  "license": "MIT",
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
+  },
+  "dependencies": {
+    "eslint": "7.32.0",
+    "prettier": "3.3.1",
+    "typescript": "5.4.5"
+  }
+}
