@@ -5,7 +5,7 @@ type Query {
   avo(id: ID!): Avocado
 }
 
-type Mutation {
+type Mutation { 
   createAvo(data: AvoCreateInput!): Avocado!
 }
 
