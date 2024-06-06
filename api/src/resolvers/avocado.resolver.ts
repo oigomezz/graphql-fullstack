@@ -82,6 +82,8 @@ export async function createAvo(
         create: attributes,
       },
     },
+    include: { attributes: true },
   })
+
   return avo
 }

@@ -5,13 +5,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "yarn start",
-    "start": "nodemon src/index.ts",
-    "migrate:prod": "npx prisma migrate deploy && node ../dist/api/src/createAdmin.js",
     "build": "prisma generate && yarn clean && tsc --build && yarn copyfiles",
+    "start": "node ../dist/api",
+    "dev": "nodemon index.ts",
     "test": "jest src",
     "clean": "rimraf ../dist/api",
-    "copyfiles": "copyfiles src/schema.graphql views/* public/* ../dist/api"
+    "copyfiles": "copyfiles src/schema.graphql views/* public/* ../dist/api",
+    "migrate:prod": "npx prisma migrate deploy && node ../dist/api/src/createAdmin.js"
   },
   "dependencies": {
     "prisma": "5.15.0",
