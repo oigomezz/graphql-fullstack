@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "Proyecto de GraphQL Fullstack con Node.js",
   "engines": {
-    "node": "14.x"
+    "node": "18.x"
   },
   "workspaces": [
     "api",
