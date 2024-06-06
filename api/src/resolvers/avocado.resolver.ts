@@ -7,8 +7,8 @@ import type {
   User,
 } from '@prisma/client'
 
-type ResolverParent = unknown
-type ResolverContext = { orm: PrismaClient; user: User | undefined }
+export type ResolverParent = unknown
+export type ResolverContext = { orm: PrismaClient; user: User | undefined }
 
 export async function findAll(
   parent: ResolverParent,
