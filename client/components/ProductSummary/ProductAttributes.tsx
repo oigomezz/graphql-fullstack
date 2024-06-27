@@ -1,10 +1,8 @@
 import React from 'react'
 import { Header, Divider, Table } from 'semantic-ui-react'
+import { Attributes } from '@service/graphql/graphql'
 
-const ProductAttributes = ({
-  description,
-  ...otherAttributes
-}: TProductAttributes) => (
+const ProductAttributes = ({ description, ...otherAttributes }: Attributes) => (
   <section className="container">
     <Header as="h3">About this avocado</Header>
     <p>{description}</p>
@@ -30,7 +28,7 @@ const ProductAttributes = ({
       </Table.Body>
     </Table>
 
-    <style jsx>{`
+    <style>{`
       .container :global(.attr-name) {
         text-transform: capitalize;
       }

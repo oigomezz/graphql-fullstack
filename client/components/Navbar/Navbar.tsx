@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Menu, Container } from 'semantic-ui-react'
@@ -31,7 +31,7 @@ const Navbar = () => {
           </Link>
         </Menu.Menu>
       </Container>
-      <style jsx global>{`
+      <style>{`
         .ui.menu.huge {
           font-size: 1.5rem;
         }

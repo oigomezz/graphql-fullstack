@@ -1,9 +1,10 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import { Input, Icon, Transition } from 'semantic-ui-react'
 import { useCartMutations } from '@store/Cart'
+import { AvocadoFragment } from '@service/graphql/graphql'
 
 type AddToCartProps = {
-  product: TProduct
+  product: AvocadoFragment
 }
 
 // Fake a server Response, we don't care on this project
@@ -48,7 +49,7 @@ const AddToCart = ({ product }: AddToCartProps) => {
           toggleMessage()
         })
         .catch((err: Error) => {
-          setError(`Error: ${err}` || 'Something went wrong')
+          setError(`Error: ${err || 'Something went wrong'}`)
           setLoading(false)
         })
     }

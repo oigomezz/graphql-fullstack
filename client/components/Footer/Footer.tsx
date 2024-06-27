@@ -19,9 +19,7 @@ const Footer = () => (
             <Header as="h4" content="Nosotros" />
             <List>
               <List.Item>
-                <Link href="/about">
-                  <a>Conoce más</a>
-                </Link>
+                <Link href="/about">Conoce más</Link>
               </List.Item>
             </List>
           </Grid.Column>
@@ -29,9 +27,7 @@ const Footer = () => (
             <Header as="h4" content="Servicios" />
             <List>
               <List.Item>
-                <Link href="/">
-                  <a>Todos los productos</a>
-                </Link>
+                <Link href="/">Todos los productos</Link>
               </List.Item>
             </List>
           </Grid.Column>
@@ -106,7 +102,7 @@ const Footer = () => (
       </div>
     </Container>
 
-    <style jsx>{`
+    <style>{`
       .colophon {
         text-align: center;
         margin-top: 3.2rem;
