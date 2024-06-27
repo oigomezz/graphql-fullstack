@@ -12,7 +12,7 @@
     "generate": "graphql-codegen -r dotenv/config --config codegen.yml"
   },
   "dependencies": {
-    "@apollo/client": "3.10.4",
+    "@apollo/client": "^3.10.4",
     "autoprefixer": "10.4.19",
     "axios": "1.7.2",
     "next": "14.2.3",
