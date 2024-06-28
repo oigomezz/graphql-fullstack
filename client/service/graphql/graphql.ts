@@ -156,6 +156,17 @@ export type GetAvocadoQuery = {
     | null
 }
 
+export type AddAvocadoMutationVariables = Exact<{
+  data: AvoCreateInput
+}>
+
+export type AddAvocadoMutation = {
+  __typename?: 'Mutation'
+  createAvo: { __typename?: 'Avocado' } & {
+    ' $fragmentRefs'?: { AvocadoFragment: AvocadoFragment }
+  }
+}
+
 export const AvocadoFragmentDoc = {
   kind: 'Document',
   definitions: [
@@ -336,3 +347,86 @@ export const GetAvocadoDocument = {
     },
   ],
 } as unknown as DocumentNode<GetAvocadoQuery, GetAvocadoQueryVariables>
+export const AddAvocadoDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'mutation',
+      name: { kind: 'Name', value: 'AddAvocado' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'data' } },
+          type: {
+            kind: 'NonNullType',
+            type: {
+              kind: 'NamedType',
+              name: { kind: 'Name', value: 'AvoCreateInput' },
+            },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'createAvo' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'data' },
+                value: {
+                  kind: 'Variable',
+                  name: { kind: 'Name', value: 'data' },
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                {
+                  kind: 'FragmentSpread',
+                  name: { kind: 'Name', value: 'Avocado' },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'Avocado' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'Avocado' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'image' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'name' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'createdAt' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'sku' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'price' } },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'attributes' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'description' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'taste' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'shape' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'hardiness' } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<AddAvocadoMutation, AddAvocadoMutationVariables>
